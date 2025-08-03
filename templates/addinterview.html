@@ -1,0 +1,41 @@
+{% extends 'companylogin.html' %}
+{% block title %}Add Interview{% endblock%}
+
+{%block content%}
+<div class="container">
+    <div class="">
+        <div class="container text-bg-warning p-3">        
+            <form action="" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="form-outline mb-4">
+                    <input type="" id="form2Example2" class="form-control" placeholder="Interview Name" name="name"/>
+                    <label class="form-label" for="form2Example2">Interview Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="" id="form2Example2" class="form-control" placeholder="paste link here" name="link"/>
+                    <label class="form-label" for="form2Example2">Website link to provide more info</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <h3>current posting photo for this interview:</h3>
+                    <img id="form2Example1" class="blah" src="#" alt="(choose a profile photo)"/>	
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="file" accept="image/gif, image/jpeg, image/png" id="form2Example2" class="form-control" placeholder="post a photo" name="postingphoto"/>
+                    <label class="form-label" for="form2Example2">photo to be posted</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="number" maxlength="12" id="form2Example2" class="form-control" name="phonenumber"/>
+                    <label class="form-label" for="form2Example2">phone number for more info</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <textarea name="about" placeholder="write about this Interview briefly" rows="4" cols="50"></textarea>
+                    <br>
+                    <label class="form-label" for="form2Example1">About this Interview</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-success mb-4">Add</button>
+                <a href={% url 'index' %}><button type="button" class="btn btn-outline-success mb-4">Back</button></a>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

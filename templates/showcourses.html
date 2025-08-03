@@ -1,0 +1,24 @@
+{% extends 'candidatelogin.html' %}
+{%load static%}
+{% block title %}courses{% endblock%}
+{% block content %}
+<div class="container">
+    <div class="row">
+            {%for course in courses%}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{course.posting_photo.url}}" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{course.name}}</h5>
+                        <p class="card-text"><b>provided by:</b>{{course.user}}</p>
+                        <p class="card-text"><b>Course Fee:</b>{{course.course_fee}}</p>
+                        <p class="card-text"><b>for contact:</b>{{course.phone_number}}</p>
+                        <p class="card-text"><b>description:</b><br>{{course.about}}</p>
+                        <a href="{{course.link}}" class="btn btn-primary">Click here for more info</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock%}
